@@ -19,5 +19,17 @@ namespace poligon_3_9_2026b
             Tacka nova = new Tacka(kraj.x-pocetak.x,kraj.y-pocetak.y);
             return nova;
         }
+        public static double SP(Vektor a, Vektor b)
+        {
+            Tacka ac = a.Centriraj();
+            Tacka bc = b.Centriraj();
+            return ac.x*bc.x+ac.y*bc.y;
+        }
+        public static double VP(Vektor a, Vektor b)
+        {
+            Tacka ac = a.Centriraj();
+            Tacka bc = b.Centriraj();
+            return ac.x * bc.y - bc.x * ac.y;
+        }
     }
 }
