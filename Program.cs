@@ -11,6 +11,9 @@ namespace poligon_3_9_2026b
         static void Main(string[] args)
         {
             //Jovan Katancevic
+            Tacka prva = new Tacka();
+            Console.WriteLine(prva.d());
+            Console.ReadLine();
         }
     }
 }
