@@ -8,7 +8,7 @@ namespace poligon_3_9_2026b
 {
     internal class Vektor
     {
-        Tacka pocetak,kraj;
+        public Tacka pocetak,kraj;
         public Vektor(Tacka a, Tacka b)
         {
             pocetak = a;
