@@ -12,7 +12,11 @@ namespace poligon_3_9_2026b
         {
             //Jovan Katancevic
             Tacka prva = new Tacka();
-            Console.WriteLine(prva.d());
+            Tacka a = new Tacka(1, 2);
+            Tacka b = new Tacka(2, 3);
+            Vektor ab = new Vektor(a, b);
+            Tacka c = ab.Centriraj();
+            Console.WriteLine(c.d());
             Console.ReadLine();
         }
     }
