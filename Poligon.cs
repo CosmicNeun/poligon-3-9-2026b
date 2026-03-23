@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.IO;
 
 namespace poligon_3_9_2026b
 {
@@ -21,7 +21,7 @@ namespace poligon_3_9_2026b
             Console.WriteLine("Koliko temena?");
             int n = Convert.ToInt32(Console.ReadLine());
             Poligon novi = new Poligon(n);
-            for(int i = 0; i < n; i++)
+            for(int i = 1; i < n; i++)
             {
                 novi.teme[i]=new Tacka();
                 Console.WriteLine("A[{0}].x:", i + 1);
@@ -31,15 +31,19 @@ namespace poligon_3_9_2026b
             }
             return novi;
         }
-        public void stampa()
+        public static void stampa(Poligon novi)
         {
-            Console.WriteLine();
+            for (int i = 0; i < novi.broj_temena; i++)
+            {
+                Console.WriteLine($"a[{i + 1}].x = {novi.teme[i].x}");
+                Console.WriteLine($"a[{i + 1}].y = {novi.teme[i].y}");
+            }
         }
         public void snimi()
         {
             StreamWriter izlaz = new StreamWriter("poligon.txt");
             izlaz.WriteLine(broj_temena);
-            for(int i = 0; i < broj_temena; i++)
+            for (int i = 0; i < broj_temena; i++)
             {
                 izlaz.WriteLine(teme[i].x);
                 izlaz.WriteLine(teme[i].y);
@@ -48,7 +52,20 @@ namespace poligon_3_9_2026b
         }
         public static Poligon ucitaj()
         {
-            return null;
+            using (StreamReader ulaz = new StreamReader("poligon.txt"))
+            {
+                int n = Convert.ToInt32(ulaz.ReadLine());
+                Poligon p = new Poligon(n);
+
+                for (int i = 0; i < n; i++)
+                {
+                    p.teme[i] = new Tacka();
+                    p.teme[i].x = Convert.ToInt32(ulaz.ReadLine());
+                    p.teme[i].y = Convert.ToInt32(ulaz.ReadLine());
+                }
+
+                return p;
+            }
         }
     }
 }

@@ -11,8 +11,8 @@ namespace poligon_3_9_2026b
         public double x, y;
         public Tacka()
         {
-            x = 0;
-            y = 0;
+            x = 1;
+            y = 1;
         }
         public Tacka(double a, double b)
         {

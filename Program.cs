@@ -18,8 +18,14 @@ namespace poligon_3_9_2026b
             Vektor A = new Vektor(prva, druga);
             Console.WriteLine(Ravan.sis(A,a,b));
             Console.ReadLine();*/
-            Poligon prvi = Poligon.unos();
-            prvi.snimi();
+            /*for (int i = 0; i < 6; i++)
+            {
+                Poligon prvi = Poligon.unos();
+                prvi.snimi();
+            }*/
+            Poligon p = Poligon.ucitaj();
+            Poligon.stampa(p);
+            Console.ReadLine();
         }
     }
 }
