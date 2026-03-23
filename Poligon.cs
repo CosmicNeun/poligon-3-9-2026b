@@ -17,7 +17,18 @@ namespace poligon_3_9_2026b
         }
         public static Poligon unos()
         {
-            return null;
+            Console.WriteLine("Koliko temena?");
+            int n = Convert.ToInt32(Console.ReadLine());
+            Poligon novi = new Poligon(n);
+            for(int i = 0; i < n; i++)
+            {
+                novi.teme[i]=new Tacka();
+                Console.WriteLine("A[{0}].x:", i + 1);
+                novi.teme[i].x = Convert.ToDouble(Console.ReadLine());
+                Console.WriteLine("A[{0}].y:", i + 1);
+                novi.teme[i].y = Convert.ToDouble(Console.ReadLine());
+            }
+            return novi;
         }
         public void stampa()
         {
