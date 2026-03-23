@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace poligon_3_9_2026b
 {
@@ -36,7 +37,14 @@ namespace poligon_3_9_2026b
         }
         public void snimi()
         {
-
+            StreamWriter izlaz = new StreamWriter("poligon.txt");
+            izlaz.WriteLine(broj_temena);
+            for(int i = 0; i < broj_temena; i++)
+            {
+                izlaz.WriteLine(teme[i].x);
+                izlaz.WriteLine(teme[i].y);
+            }
+            izlaz.Close();
         }
         public static Poligon ucitaj()
         {
