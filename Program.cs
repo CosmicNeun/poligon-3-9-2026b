@@ -23,8 +23,11 @@ namespace poligon_3_9_2026b
                 Poligon prvi = Poligon.unos();
                 prvi.snimi();
             }*/
+            //Poligon p = Poligon.unos();
             Poligon p = Poligon.ucitaj();
+            //p.snimi();
             Poligon.stampa(p);
+            Console.WriteLine("obim={0}", p.Obim());
             Console.ReadLine();
         }
     }

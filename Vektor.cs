@@ -31,5 +31,11 @@ namespace poligon_3_9_2026b
             Tacka bc = b.Centriraj();
             return ac.x * bc.y - bc.x * ac.y;
         }
+        public double duzina()
+        {
+            Tacka A = this.Centriraj();
+            double duzina = A.d();
+            return duzina;
+        }
     }
 }

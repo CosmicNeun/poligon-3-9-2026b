@@ -21,7 +21,7 @@ namespace poligon_3_9_2026b
             Console.WriteLine("Koliko temena?");
             int n = Convert.ToInt32(Console.ReadLine());
             Poligon novi = new Poligon(n);
-            for(int i = 1; i < n; i++)
+            for(int i = 0; i < n; i++)
             {
                 novi.teme[i]=new Tacka();
                 Console.WriteLine("A[{0}].x:", i + 1);
@@ -66,6 +66,20 @@ namespace poligon_3_9_2026b
 
                 return p;
             }
+        }
+        public double Obim()
+        {
+            double obim=0;
+            Vektor a;
+            for(int i = 0; i < broj_temena - 1; i++)
+            {
+                a = new Vektor(teme[i], teme[i + 1]);
+                obim += a.duzina();
+            }
+            a = new Vektor(teme[broj_temena-1], teme[0]);
+            obim += a.duzina();
+            return obim;
+
         }
     }
 }
