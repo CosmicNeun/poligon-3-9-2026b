@@ -23,10 +23,9 @@ namespace poligon_3_9_2026b
         {
             return Math.Sqrt(x * x + y * y);
         }
-        public bool jednaka()
+        public static bool jednake(Tacka a, Tacka b)
         {
-
-            return false;
+            return (a.x==b.x) && (a.y==b.y);
         }
     }
 }

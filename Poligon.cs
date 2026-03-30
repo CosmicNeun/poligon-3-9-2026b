@@ -82,8 +82,37 @@ namespace poligon_3_9_2026b
         }
         public bool prost()
         {
-            
-            return false;
+            bool prost = true;
+            for(int i = 0; i < broj_temena - 1; i++)
+            {
+                for (int j = 0; j < broj_temena - 1; j++)
+                {
+                    if (Tacka.jednake(teme[i], teme[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+            Vektor[] stranica = new Vektor[broj_temena];
+            for (int i = 0; i < broj_temena - 1; i++)
+            {
+                stranica[i] = new Vektor(teme[i], teme[i + 1]);
+            }
+            stranica[broj_temena - 1] = new Vektor(teme[broj_temena - 1], teme[0]);
+            for (int i = 0; i < broj_temena; i++)
+            {
+                int kraj;
+                if (i == 0) kraj = broj_temena - 1;
+                else kraj = broj_temena;
+                for (int j = i + 2; j < kraj; j++)
+                {
+                    if (Vektor.seku_se(stranica[i], stranica[j]))
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }
