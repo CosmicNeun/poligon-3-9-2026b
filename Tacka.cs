@@ -23,5 +23,10 @@ namespace poligon_3_9_2026b
         {
             return Math.Sqrt(x * x + y * y);
         }
+        public bool jednaka()
+        {
+
+            return false;
+        }
     }
 }

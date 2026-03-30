@@ -79,7 +79,11 @@ namespace poligon_3_9_2026b
             a = new Vektor(teme[broj_temena-1], teme[0]);
             obim += a.duzina();
             return obim;
-
+        }
+        public bool prost()
+        {
+            
+            return false;
         }
     }
 }
