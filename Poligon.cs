@@ -138,6 +138,7 @@ namespace poligon_3_9_2026b
         }
         public bool tacka_u(Tacka t)
         {
+
             return false;
         }
     }
