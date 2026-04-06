@@ -11,7 +11,7 @@ namespace poligon_3_9_2026b
     {
         public int broj_temena;
         public Tacka[] teme;
-        public Poligon(int n) 
+        public Poligon(int n)
         {
             broj_temena = n;
             teme = new Tacka[n];
@@ -21,9 +21,9 @@ namespace poligon_3_9_2026b
             Console.WriteLine("Koliko temena?");
             int n = Convert.ToInt32(Console.ReadLine());
             Poligon novi = new Poligon(n);
-            for(int i = 0; i < n; i++)
+            for (int i = 0; i < n; i++)
             {
-                novi.teme[i]=new Tacka();
+                novi.teme[i] = new Tacka();
                 Console.WriteLine("A[{0}].x:", i + 1);
                 novi.teme[i].x = Convert.ToDouble(Console.ReadLine());
                 Console.WriteLine("A[{0}].y:", i + 1);
@@ -69,21 +69,21 @@ namespace poligon_3_9_2026b
         }
         public double Obim()
         {
-            double obim=0;
+            double obim = 0;
             Vektor a;
-            for(int i = 0; i < broj_temena - 1; i++)
+            for (int i = 0; i < broj_temena - 1; i++)
             {
                 a = new Vektor(teme[i], teme[i + 1]);
                 obim += a.duzina();
             }
-            a = new Vektor(teme[broj_temena-1], teme[0]);
+            a = new Vektor(teme[broj_temena - 1], teme[0]);
             obim += a.duzina();
             return obim;
         }
         public bool prost()
         {
             bool prost = true;
-            for(int i = 0; i < broj_temena - 1; i++)
+            for (int i = 0; i < broj_temena - 1; i++)
             {
                 for (int j = 0; j < broj_temena - 1; j++)
                 {
@@ -113,6 +113,32 @@ namespace poligon_3_9_2026b
                 }
             }
             return true;
+        }
+        public bool konveksan()
+        {
+            int brojac = 0;
+            for (int i = 0; i < broj_temena; i++)
+            {
+                Vektor prvi = new Vektor(teme[i], teme[(i + 1) % broj_temena]);
+                Vektor drugi = new Vektor(teme[(i + 1) % broj_temena], teme[(i + 2) % broj_temena]);
+                if (Vektor.VP(prvi, drugi) > 0) brojac++;
+            }
+            if ((brojac == broj_temena)||(brojac == 0)) return true;
+            return false;
+        }
+        public double povrsina()
+        {
+            double plus = 0, minus = 0;
+            for(int i = 0; i < broj_temena; i++)
+            {
+                plus += teme[i].x * teme[(i + 1) % broj_temena].y;
+                minus += teme[i].y * teme[(i + 1) % broj_temena].x;
+            }
+            return Math.Abs(plus - minus) / 2;
+        }
+        public bool tacka_u(Tacka t)
+        {
+            return false;
         }
     }
 }
