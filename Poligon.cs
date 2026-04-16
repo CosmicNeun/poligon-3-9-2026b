@@ -136,10 +136,35 @@ namespace poligon_3_9_2026b
             }
             return Math.Abs(plus - minus) / 2;
         }
-        public bool tacka_u(Tacka t)
+        public bool tacka_u()
         {
+            Tacka t = new Tacka();
+            Console.Write("Unesite x koordinatu tacke: ");
+            t.x = Convert.ToDouble(Console.ReadLine());
+            Console.Write("Unesite y koordinatu tacke: ");
+            t.y = Convert.ToDouble(Console.ReadLine());
 
-            return false;
+            bool unutra = false;
+            int j = broj_temena - 1;
+
+            for (int i = 0; i < broj_temena; i++)
+            {
+                double x1 = teme[i].x, y1 = teme[i].y;
+                double x2 = teme[j].x, y2 = teme[j].y;
+
+                bool uslovY = (y1 > t.y) != (y2 > t.y);
+                bool uslovX = t.x < (x2 - x1) * (t.y - y1) / (y2 - y1) + x1;
+
+                if (uslovY && uslovX)
+                    unutra = !unutra;
+
+                j = i;
+            }
+            if (unutra)
+                Console.WriteLine($"Tacka ({t.x}, {t.y}) je u poligu.");
+            else
+                Console.WriteLine($"Tacka ({t.x}, {t.y}) nije u poligu.");
+            return unutra;
         }
     }
 }
