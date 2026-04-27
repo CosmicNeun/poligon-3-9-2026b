@@ -24,13 +24,16 @@ namespace poligon_3_9_2026b
                 prvi.snimi();
             }*/
             Poligon prvi = Poligon.unos();
-            // Poligon prvi = Poligon.ucitaj();
+            //Poligon prvi = Poligon.ucitaj();
             // prvi.snimi();
             // prvi.stampa();
             // Console.WriteLine("obim={0}", prvi.obim());
-            Console.WriteLine("konveksan={0}", prvi.konveksan());
-            Console.WriteLine("povrsina={0}", prvi.povrsina());
-            prvi.tacka_u();
+            //Console.WriteLine("konveksan={0}", prvi.konveksan());
+            //Console.WriteLine("povrsina={0}", prvi.povrsina());
+            //prvi.tacka_u();
+            Zadaci.Deltoid(prvi);
+            Zadaci.Pravougaonik(prvi);
+            Zadaci.Trapez(prvi);
             Console.ReadLine();
         }
     }
